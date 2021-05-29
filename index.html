@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Cockroaches</title>
+</head>
+<body>
+    <img src="images/title.png" alt="title" class="name">
+    <div class="menu">
+        <p class="choose">Выберите опцию:</p>
+        <p><button class="play" id="play" onclick="window.location.href='game.html'">Играть</button></p>
+        <p><button class="instruction" onclick="show_popap('modal-1')">Инструкция</button></p>
+        <div class="overlay" id="modal-1">
+            <div class="flex-popap">
+                <div class="popap">
+                    <span class="close_popap">Закрыть</span>
+                    <h2>Правила игры "Тараканы!"</h2>
+                    <p>При старте игры на поле в произвольном порядке и количестве появлются тараканы и пчелы. </p>
+                    <p>Задача игрока прихлопнуть как можно больше тараканов, при этом не убив ни одной пчелы.</p>
+                    <p>Игра заканчивается в случае, если игрок не убил таракана и таракан дошел до конца
+                        поля или же, если игрок убил пчелу.</p>
+                    <p><img class="cock" alt="cockroach" src="images/cockroach.png">  <br> таракана надо убить</p>
+                    <p><img class='bee' alt="bee" src="images/bee.png"> <br> пчелу надо пощадить</p>
+                </div>
+            </div>
+        </div>
+        <p><button class="about" onclick="show_popap('modal-2')">Об игре</button></p>
+        <div class="overlay" id="modal-2">
+            <div class="flex-popap">
+                <div class="popap">
+                    <span class="close_popap">Закрыть</span>
+                    <h2>Об игре "Тараканы!"</h2>
+                    <p>Наименование игры – «Тараканы!». Браузерная или мобильная игра-кликер, заключающаяся в том,
+                        <br>что игрок должен раздавить тараканов,
+                        появляющихся на поле.  </p>
+                    <p>Убить таракана – не сложная игра на реакцию,
+                        главной целью которой является убийство тараканов за получение очков или за время.</p>
+                    <p>Вариантов реализации этой игры достаточно много, что дает возможность разработчикам творить.</p>
+                    <img src="images/tenor1.gif" alt="swag" class="eat">
+                </div>
+            </div>
+        </div>
+        <p><button class="records" onclick="show_popap('modal-3')">Рекорды</button></p>
+        <div class="overlay" id="modal-3">
+            <div class="flex-popap">
+                <div class="popap">
+                    <span class="close_popap">Закрыть</span>
+                    <h2>Таблица рекордов</h2>
+                    <ol id ="ol" type="1">
+                    </ol>
+                    <img src="images/giphy.gif" alt="swag" class="wooo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function show_popap(id_popap) {
+            let id = "#" + id_popap;
+            let ol = document.getElementById('ol');
+            $(id).addClass('active');
+            if (id_popap ==='modal-3'){
+                for (let i = 0; i< localStorage.length; i++ ) {
+                    let li = document.createElement('li');
+                    li.innerHTML = '<u>'+ localStorage.key(i)+ ':' + localStorage.getItem(localStorage.key(i))+'</u>';
+                    ol.prepend(li);
+                }
+            }
+        }
+
+        $(".close_popap").click( function(){
+            $(".overlay").removeClass("active");
+        });
+
+    </script>
+</body>
+</html>
