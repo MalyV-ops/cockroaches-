@@ -1,0 +1,11 @@
+body{
+    margin-left: 250px;
+    background: url("../images/travka.jpeg");
+}
+.title{
+    margin-left: 350px;
+    transform-origin: 50px;
+    rotation: unset;
+    width: 500px;
+    height: 150px;
+}

@@ -1,0 +1,171 @@
+
+/*
+задаю фон странице
+*/
+body{
+    background: url("../images/tropa.jpeg");
+}
+
+/*
+настройка отображения названия игры
+*/
+.name{
+    margin-left: 37%;
+    background-color: rgba(240, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+/*
+настройка внешнего вида меню
+*/
+.menu{
+    display: block;
+    background: rgba(240, 248, 255, 0.19);
+    width: 500px;
+    height: 600px;
+    margin-left: 35%;
+    margin-top: 25px;
+    border: #E09C4B solid 5px;
+    border-radius: 7px;
+}
+
+/*
+Заголовок меню
+*/
+.choose{
+    display: block;
+    position: relative;
+    font: 40px 'Sawasdee';
+    padding-left: 85px;
+    width: 83%;
+    height: 45px;
+    background-color: chocolate;
+}
+
+/*
+общие стили для кнопок в меню
+*/
+.play, .instruction, .about, .records{
+    cursor: pointer;
+    display: block;
+    position:relative;
+    margin-left: 140px;
+    width: 200px;
+    height: 50px;
+    background: rgba(240, 248, 255, 0.22);
+    border: #E09C4B solid 4px;
+    border-radius: 10px;
+    font: 30px 'Sawasdee';
+}
+
+/*
+после наведения курсора на одну из кнопок
+*/
+.play:hover, .instruction:hover, .about:hover, .records:hover{
+    background: rgba(222, 125, 10, 0.66);
+    border: #de7d0a solid 4px;
+}
+
+/*
+настройка модальных окон, по умолчанию задано свойство display: none;, что говорит о скрытии объекта,
+после добавления класса active модальное окно появится, а при удалении - закроется
+класс overlay - подложка модального окна
+*/
+.overlay {
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6); /*затемнение фона*/
+    display: none;
+}
+
+/*
+создание отображения модального окна
+*/
+.overlay.active {
+    display: block;
+}
+
+/*
+расположение и центрирование модального окна
+*/
+.overlay .flex-popap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+основные характеристики окна
+*/
+.overlay .flex-popap .popap {
+    position: relative;
+    background-color: #E09C4B;
+    border-radius: 10px;
+    padding: 35px 25px;
+    margin: 0 10px;
+    width: 500px;
+    height: 750px;
+    overflow: auto;
+    font-family: Sawasdee, monospace;
+    color: aliceblue;
+}
+
+/*
+стили для кнопки закрытия окна
+*/
+.popap span {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*
+стили для изображений жуков
+*/
+.cock, .bee{
+    /*float: bottom;*/
+    width: 100px;
+    height: 200px;
+}
+
+/*
+стили для таблицы в окне рекордов
+*/
+#ol{
+    font-size: 30px;
+    font-family: Sawasdee, monospace;
+}
+
+.eat{
+    animation-name: eat;
+    animation-duration: 4s;
+    margin-left: 20%;
+}
+@keyframes eat {
+    from {margin-left: -20%;}
+    to { margin-left: 20%;}
+}
+/*
+стили анимированного таракана в таблице рекордов
+*/
+.wooo{
+    animation-name: woooo;
+    animation-duration: 4s;
+    margin-left: 40%;
+}
+
+/*
+анимация появления таракана в таблице рекордов
+*/
+@keyframes woooo {
+    from {margin-left: -20%;}
+    to { margin-left: 40%;}
+}
